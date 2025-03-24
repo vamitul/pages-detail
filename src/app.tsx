@@ -32,8 +32,8 @@ const parseElement = (element: DesignEditing.FixedElement) => {
     }
     case 'shape': {
       ret.type='shape';
-      viewBox: boxToBounds(element.viewBox);
-      paths: element.paths.toArray().map((path) => {
+      ret.viewBox= boxToBounds(element.viewBox);
+      ret.paths = element.paths.toArray().map((path) => {
         return {
           d: path.d,
           fill: path.fill.color,
